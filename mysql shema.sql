@@ -25,7 +25,7 @@ DROP TABLE IF EXISTS `studentadministration`.`teacher` ;
 CREATE TABLE IF NOT EXISTS `studentadministration`.`teacher` (
   `id` INT(11) NOT NULL AUTO_INCREMENT,
   `email` VARCHAR(50) NOT NULL,
-  `is_active` TINYINT(4) NULL DEFAULT NULL,
+  `is_active` TINYINT(4) NULL DEFAULT '1',
   PRIMARY KEY (`id`, `email`))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb4
@@ -59,7 +59,7 @@ DROP TABLE IF EXISTS `studentadministration`.`student` ;
 CREATE TABLE IF NOT EXISTS `studentadministration`.`student` (
   `id` INT(11) NOT NULL AUTO_INCREMENT,
   `email` VARCHAR(50) NOT NULL,
-  `is_suspended` TINYINT(4) NULL DEFAULT '1',
+  `is_suspended` TINYINT(4) NULL DEFAULT '0',
   `suspended_by` INT(11) NULL DEFAULT NULL,
   PRIMARY KEY (`id`, `email`),
   INDEX `student_suspended_by_idx` (`suspended_by` ASC) VISIBLE,
