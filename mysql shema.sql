@@ -23,7 +23,7 @@ USE `studentadministration` ;
 DROP TABLE IF EXISTS `studentadministration`.`teacher` ;
 
 CREATE TABLE IF NOT EXISTS `studentadministration`.`teacher` (
-  `id` INT(11) NOT NULL,
+  `id` INT(11) NOT NULL AUTO_INCREMENT,
   `email` VARCHAR(50) NOT NULL,
   `is_active` TINYINT(4) NULL DEFAULT NULL,
   PRIMARY KEY (`id`, `email`))
@@ -38,7 +38,7 @@ COLLATE = utf8mb4_0900_ai_ci;
 DROP TABLE IF EXISTS `studentadministration`.`notifications` ;
 
 CREATE TABLE IF NOT EXISTS `studentadministration`.`notifications` (
-  `id` INT(11) NOT NULL,
+  `id` INT(11) NOT NULL AUTO_INCREMENT,
   `teacher_id` INT(11) NOT NULL,
   `notification` VARCHAR(1000) NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
@@ -57,7 +57,7 @@ COLLATE = utf8mb4_0900_ai_ci;
 DROP TABLE IF EXISTS `studentadministration`.`student` ;
 
 CREATE TABLE IF NOT EXISTS `studentadministration`.`student` (
-  `id` INT(11) NOT NULL,
+  `id` INT(11) NOT NULL AUTO_INCREMENT,
   `email` VARCHAR(50) NOT NULL,
   `is_suspended` TINYINT(4) NULL DEFAULT '1',
   `suspended_by` INT(11) NULL DEFAULT NULL,
